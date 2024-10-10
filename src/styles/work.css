@@ -1,0 +1,205 @@
+.workContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 1em;
+  min-height: 100vh;
+  padding: 2em;
+  position: relative;
+}
+
+
+.work_heading {
+  color: white;
+  font-weight: 700;
+  font-size: clamp(24px, 5vw, 48px);
+  margin-bottom: 3rem;
+}
+
+.workgrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 1em;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.work-grid-item {
+  border-radius: 8px;
+  font-weight: bold;
+  min-height: 400px;
+}
+
+.g2,
+.g3 {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  gap: 2em;
+  padding: 1em;
+}
+
+.work-heading {
+  text-align: center;
+  font-size: clamp(18px, 5vw, 28px);
+}
+
+.imgcontent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgcontent img {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.button {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  border: 2px double rgb(76, 75, 75);
+  font-size: clamp(0.8em, 2vw, 1.2em);
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
+  max-width: 200px;
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+}
+
+.button:hover {
+  background-color: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 2px double rgba(84, 72, 253, 0.3);
+}
+
+.button svg {
+  fill: rgb(255, 255, 255);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1;
+  height: 19px;
+  width: 20px;
+  margin-left: 15px;
+  animation: moveIcon 2s infinite;
+}
+
+.work-grid-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.torch-container {
+  position: absolute;
+  top: -350px;
+  left: -350px;
+  right: -350px;
+  bottom: -350px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.torch {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.border-highlight {
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.border-highlight-top,
+.border-highlight-bottom {
+  height: 2px;
+  width: 100%;
+  left: 0;
+}
+
+.border-highlight-left,
+.border-highlight-right {
+  width: 2px;
+  height: 100%;
+  top: 0;
+}
+
+.border-highlight-top {
+  top: 0;
+}
+
+.border-highlight-bottom {
+  bottom: 0;
+}
+
+.border-highlight-left {
+  left: 0;
+}
+
+.border-highlight-right {
+  right: 0;
+}
+
+@keyframes moveIcon {
+
+  0%,
+  100% {
+    transform: translateX(-8px);
+  }
+
+  50% {
+    transform: translateX(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .workContainer {
+    max-width: 100%;
+  }
+
+  .workgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .g1,
+  .g2,
+  .g3,
+  .g4 {
+    grid-column: 1 / -1;
+  }
+
+  .work-grid-item {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .workContainer {
+    padding: 1em;
+  }
+
+  .work-grid-item {
+    min-height: 150px;
+  }
+
+  .button {
+    max-width: 180px;
+  }
+}

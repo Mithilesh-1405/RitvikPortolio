@@ -1,0 +1,153 @@
+.personacontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 4em;
+  min-height: 100vh;
+  padding: 2em;
+  position: relative;
+  width: 100%;
+  color: white;
+}
+
+.personaGrid {
+  display: grid;
+  grid-template-columns: minmax(400px, auto) 1fr;
+  max-width: 1300px;
+  gap: 1em;
+  width: 100%;
+}
+
+.user_persona_heading {
+  color: white;
+  font-weight: 700;
+  font-size: clamp(24px, 5vw, 48px);
+}
+
+.personaGridItem {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 1em;
+}
+
+.techImgs {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  gap: 4em;
+}
+
+.techImgs svg {
+  fill: white;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.head h1 {
+  font-size: clamp(1.2em, 2vw, 1.5em);
+  margin-left: 0.5em;
+}
+
+.personaGridItem ul {
+  padding-left: 1.5em;
+}
+
+.ng {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, (minmax(300px, 1fr)));
+  gap: 1em;
+}
+
+.ng2 {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1em;
+}
+
+.pfp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pfp img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.pfp h3 {
+  margin-top: 1em;
+  font-size: clamp(1.2em, 2vw, 1.5em);
+}
+
+.dmg,
+.tech {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1em;
+}
+
+.dmg h2,
+.tech h2 {
+  font-size: clamp(1em, 1.5vw, 1.2em);
+  margin-bottom: 0.5em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(0.8em, 1.5vw, 1em);
+}
+
+th,
+td {
+  padding: 0.5em;
+  text-align: left;
+}
+
+.flowchart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2em;
+}
+
+.flowchart img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .personacontainer {
+    padding: 1em;
+  }
+
+  .personaGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .personacontainer {
+    padding: 0.5em;
+  }
+
+  .head h1 {
+    font-size: 1em;
+  }
+
+  .pfp img {
+    max-width: 150px;
+  }
+}
