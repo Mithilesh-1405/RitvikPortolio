@@ -1,18 +1,35 @@
 .main {
-  background-color: #000000;
   color: white;
+  max-width: 1300px;
+  margin: 0 auto;
 }
+
 .hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100svh;
-  font-size: 3.5em;
+  min-height: 100svh;
+  font-size: 48px;
   font-weight: bold;
+  text-align: center;
 }
+
 .hover h1 {
   background: linear-gradient(to right, #0a00b0 0%, #98b5ff 50%, #360077 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .hover {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hover {
+    font-size: 30px;
+  }
 }

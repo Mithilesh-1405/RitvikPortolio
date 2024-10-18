@@ -1,0 +1,149 @@
+.outer_container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.proto_heading {
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 1em;
+}
+
+.tabContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto;
+    max-width: 1300px;
+    width: 100%;
+}
+
+.tabs {
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tabs::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tabs::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 3px;
+}
+
+.tabButton {
+    padding: 12px 24px;
+    border-radius: 25px;
+    margin: 0 10px;
+    font-weight: 500;
+    font-size: 18px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    max-width: fit-content;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    transition: background-color 0.5s;
+    box-shadow: 0 2px 5px rgba(34, 34, 34, 0.2);
+}
+
+.tabButtonActive {
+    color: white;
+    background-color: rgba(138, 79, 248, 0.61);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0.2), rgba(187, 187, 187, 0.2));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 8px;
+}
+
+.content img {
+    max-width: 100%;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .outer_container {
+        padding: 1.5rem;
+    }
+
+    .proto_heading {
+        font-size: 36px;
+        margin-bottom: 1.5rem;
+    }
+
+    .tabs {
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .tabButton {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .outer_container {
+        padding: 1rem;
+    }
+
+    .proto_heading {
+        font-size: 28px;
+        margin-bottom: 1rem;
+    }
+
+    .tabs {
+        margin-bottom: 1rem;
+    }
+
+    .tabButton {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}

@@ -1,6 +1,11 @@
 .light {
   position: relative;
 }
+
+.preloader {
+  position: relative;
+}
+
 .light::after {
   content: "";
   position: absolute;
@@ -9,19 +14,58 @@
   height: 100%;
   width: 100%;
   pointer-events: none;
-  background: radial-gradient(
-    circle at var(--x, 50%) var(--y, 50%),
-    transparent 1%,
-    rgba(0, 0, 0, 0.3) 8%,
-    rgba(0, 0, 0, 1) 15%,
-    rgba(0, 0, 0, 1) 35%,
-    rgba(0, 0, 1, 1) 40%
-  );
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+      transparent 1%,
+      rgba(0, 0, 0, 0) 8%,
+      rgba(0, 0, 0, 0) 15%,
+      rgba(0, 0, 0, 0) 35%,
+      rgba(0, 0, 1, 0) 40%);
 }
 
 .hint {
-  background-color: black;
+  /* background-color: black; */
   color: white;
   text-align: center;
   font-weight: 100;
+  font-size: 1.5em;
+}
+
+@media all and (max-width: 375px) {
+  .light::after {
+    background: none;
+  }
+
+  .hint {
+    display: none;
+  }
+}
+
+@media all and (min-width: 376px) and (max-width: 500px) {
+  .light::after {
+    background: none;
+  }
+
+  .hint {
+    display: none;
+  }
+}
+
+@media all and (min-width: 501px) and (max-width: 768px) {
+  .light::after {
+    background: none;
+  }
+
+  .hint {
+    display: none;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1300px) {
+  .light::after {
+    background: none;
+  }
+
+  .hint {
+    display: none;
+  }
 }

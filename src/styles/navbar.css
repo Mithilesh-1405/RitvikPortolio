@@ -1,6 +1,6 @@
 nav {
   height: 90px;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -20,12 +20,14 @@ nav {
   font-size: 20px;
   margin-right: 82px;
 }
+
 .links-container a:hover {
   cursor: pointer;
 }
+
 nav a {
   height: 100%;
-  padding: 0 20px;
+  margin: 0 20px;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -36,6 +38,7 @@ nav .logo {
   font-size: 38px;
   margin-left: 82px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .socials {
@@ -56,6 +59,7 @@ nav .logo {
 .close-sidebar-button:hover {
   cursor: pointer;
 }
+
 .fancy {
   text-decoration: none;
   display: flex;
@@ -80,10 +84,24 @@ nav .logo {
   transform: scaleX(1);
   background-color: #ffffff;
 }
+
+.fancy.active::after {
+  transform: scaleX(1);
+  background-color: #ffffff;
+}
+
+.card {
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: none;
+}
+
 @media all and (max-width: 1025px) {
   .links-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
     background-color: rgba(33, 32, 32, 0.8);
@@ -103,9 +121,11 @@ nav .logo {
     justify-content: center;
     align-items: center;
   }
+
   .fancy::after {
     width: 150px;
   }
+
   .links-container a:hover {
     color: white;
     cursor: pointer;
@@ -126,7 +146,7 @@ nav .logo {
 
   nav .logo {
     justify-content: flex-start;
-    margin: 0;
+    margin-left: 20px;
   }
 
   .open-sidebar-button,
@@ -150,17 +170,119 @@ nav .logo {
     display: block;
   }
 
-  #sidebar-active:checked ~ .links-container {
+  #sidebar-active:checked~.links-container {
     right: 0;
   }
 
-  #sidebar-active:checked ~ .open-sidebar-button {
+  #sidebar-active:checked~.open-sidebar-button {
     transform: rotate(60deg);
     opacity: 0;
   }
 
-  #sidebar-active:checked ~ .close-sidebar-button {
+  #sidebar-active:checked~.close-sidebar-button {
     transform: rotate(90deg);
     opacity: 1;
+  }
+
+  #sidebar-active:checked~.links-container .card {
+    display: flex;
+  }
+
+  #sidebar-active:checked~nav {
+    background-color: rgba(0, 0, 0, 0);
+    ;
+  }
+
+  .links-container a:active ~ #sidebar-active {
+    display: none;
+  }
+  .card {
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto;
+    display: flex;
+  }
+
+  .card .social-link1,
+  .card .social-link2,
+  .card .social-link3,
+  .card .social-link4 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card svg {
+    position: absolute;
+    display: flex;
+    width: 60%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .card .social-link1,
+  .card .social-link2,
+  .card .social-link3,
+  .card .social-link4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    color: whitesmoke;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+    height: 35px;
+    border-radius: 50px;
+  }
+
+  .card svg {
+    transform: scale(1);
+  }
+
+  .card .social-link1:hover {
+    background-color: #1a1e22;
+    animation: bounce_613 0.4s linear;
+  }
+
+  .card .social-link2:hover {
+    background-color: #0a66c2;
+    animation: bounce_613 0.4s linear;
+  }
+
+  .card .social-link3:hover {
+    background-color: #e61dc8;
+    animation: bounce_613 0.4s linear;
+  }
+
+  .card .social-link4:hover {
+    background-color: #1d4292;
+    animation: bounce_613 0.4s linear;
+  }
+
+  @keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+
+    60% {
+      transform: scale(0.8);
+    }
+
+    80% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
   }
 }
